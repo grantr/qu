@@ -25,7 +25,10 @@ module Qu
       end
 
       # Public: Override in subclass.
-      def pop(queue = 'default')
+      #
+      # queue - Name of queue to pop from
+      # count - Optional number of items to pop (if supported)
+      def pop(queue = 'default', count = nil)
       end
 
       # Public: Override in subclass.
