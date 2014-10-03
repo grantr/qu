@@ -212,6 +212,7 @@ shared_examples_for 'batch pop support' do
   it 'should return an array when count is > 1' do
     subject.push(payload1)
     subject.pop(payload1.queue, 2).map(&:id).should == [payload1.id]
+    subject.pop(payload1.queue, 2).should == []
   end
 
   it 'should not return already popped jobs' do
