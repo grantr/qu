@@ -31,6 +31,8 @@ module Qu
       def pop(queue = 'default', count = nil)
       end
 
+      def supports_batch_pop?; false; end
+
       # Public: Override in subclass.
       def size(queue = 'default')
         0
