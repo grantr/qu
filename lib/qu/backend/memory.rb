@@ -38,15 +38,18 @@ module Qu
 
       alias fail abort
 
-      def pop(queue_name = 'default')
+      def pop(queue_name = 'default', size = 1)
         queue_for(queue_name) do |queue|
-          if id = queue.shift
+          ids = queue.shift(size)
+          payloads = ids.map do |id|
             payload = Payload.new(load(@messages[id]))
             @pending[id] = payload
-            payload
           end
+          size > 1 ? payloads : payloads.first
         end
       end
+
+      def supports_batch_pop?; true; end
 
       def size(queue = 'default')
         queue_for(queue).size
