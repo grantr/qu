@@ -186,6 +186,10 @@ shared_examples_for 'batch pop support' do
   let(:payload2) { Qu::Payload.new(:klass => SimpleJob) }
   let(:payload3) { Qu::Payload.new(:klass => SimpleJob) }
 
+  it 'should signal batch pop support' do
+    subject.supports_batch_pop?.should == true
+  end
+
   it 'should pop multiple items' do
     subject.push(payload1)
     subject.push(payload2)
