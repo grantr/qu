@@ -15,7 +15,7 @@ module Qu
         end
       end
 
-      def_delegators :@backend, :connection, :connection=, :reconnect
+      def_delegators :@backend, :connection, :connection=, :reconnect, :supports_batch_pop?
 
       def initialize(backend)
         @backend = backend
