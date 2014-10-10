@@ -12,3 +12,6 @@ group :test do
   gem 'rake'
   gem "rspec", "~> 2.14.1"
 end
+
+# don't require snappy (doesn't build on osx)
+gem 'krakow', :git => 'https://github.com/chrisroberts/krakow', :ref => 'fae45fe'
