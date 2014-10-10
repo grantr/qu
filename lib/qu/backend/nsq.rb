@@ -164,10 +164,6 @@ module Qu
         actor.terminate
       end
 
-      def connection=(connection)
-        @connection = connection
-      end
-
       # TODO Could create an object that includes addresses?
       def connection
         @connection ||= OpenStruct.new(:name => 'hello')
