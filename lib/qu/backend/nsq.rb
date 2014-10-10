@@ -88,6 +88,7 @@ module Qu
       end
 
       def producers
+        #TODO thread safety
         @producers ||= {}
       end
 
@@ -120,6 +121,7 @@ module Qu
       end
 
       def consumers
+        #TODO thread safety
         @consumers ||= {}
       end
 
@@ -154,6 +156,7 @@ module Qu
       end
 
       def channel_name
+        #TODO thread safety
         @channel_name ||= 'qu'
       end
 
